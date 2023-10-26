@@ -11,7 +11,7 @@ function aaa() {
     formdata.append("iscreatesearchablepdf", "false");
     formdata.append("issearchablepdfhidetextlayer", "false");
     formdata.append("OCREngine", "2");
-    formdata.append("filetype", "jpeg");
+    formdata.append("filetype", "jpg");
 
 
     var requestOptions = {
