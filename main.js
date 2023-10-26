@@ -1,6 +1,7 @@
 
 
 function aaa() {
+    document.getElementById('load').style.display = 'flex';
     var myHeaders = new Headers();
     myHeaders.append("apikey", "helloworld");
 
@@ -42,6 +43,7 @@ function aaa() {
                 console.log(line);
             }
         }
+        document.getElementById('load').style.display = 'none';
     }
     recieve();
 }

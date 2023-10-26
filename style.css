@@ -34,12 +34,12 @@ form {
     display: flex;
     color: white;
     flex-direction: column;
-    row-gap: 2vh;
+    row-gap: 2.7vh;
     align-items: center;
     justify-content: center;
     height: 50vh;
     width: 80vw;
-    background: #7e575e54;
+    background: #ffffffde;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
@@ -79,3 +79,67 @@ p {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
+
+.load {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 1111111111;
+    animation: appear 0.5s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loader {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+/* Loader Blue Circle */
+.loader::before {
+    background: #A7727D;
+    animation: animate 2s ease-in-out infinite;
+}
+
+/* Loader Glassmorphism */
+.loader::after {
+    background: #a7727d2a;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: animate 2s ease-in-out infinite;
+    z-index: 1;
+    animation-delay: -1s;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+      transform: translateX(-10vw);
+    }
+    50% {
+      transform: translateX(10vw);
+    }
+  }
