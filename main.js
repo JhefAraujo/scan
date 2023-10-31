@@ -1,6 +1,6 @@
 
 
-function aaa() {
+function scan() {
     document.getElementById('load').style.display = 'flex';
     var myHeaders = new Headers();
     myHeaders.append("apikey", "helloworld");
@@ -30,7 +30,7 @@ function aaa() {
         zero = parsedResults[0];
         overlays = zero["TextOverlay"];
         lines = overlays.Lines;
-        
+
         for (let i = 0; i < lines.length; i++) {
             let line = lines[i].LineText;
 
@@ -38,6 +38,7 @@ function aaa() {
 
             if (line.length == 7 && isnum == true) {
                 cria = document.createElement('p');
+                cria.setAttribute('id', 'cria')
                 document.getElementById('form').appendChild(cria);
                 cria.innerHTML = line;
                 console.log(line);
@@ -46,4 +47,10 @@ function aaa() {
         document.getElementById('load').style.display = 'none';
     }
     recieve();
+}
+
+async function send() {
+    valor = document.getElementById('cria').innerHTML;
+    document.getElementById('validate').value = valor;
+    document.getElementById('send').submit();
 }

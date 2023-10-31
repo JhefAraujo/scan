@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" sizes="192x192" href="icon.png"> 
+    <link rel="apple-touch-icon" sizes="192x192" href="icon.png">
     <title>Scanner</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main>
         <form id="form" method="post" action="https://api.ocr.space/parse?apikey=f44390479b88957">
             <label for="file">Escanear Boleta</label>
-            <input onchange="aaa()" id="file" capture="user" type="file" name="file" style="display: none;">
-            <h1 onclick="aaa()">Enviar</h1>
+            <input onchange="scan()" id="file" capture="user" type="file" name="file" style="display: none;">
+            <h1 onclick="send()">Enviar</h1>
+        </form>
+        <form id="send" style="display: none;"
+            action="https://script.google.com/macros/s/AKfycbwl0Gmi1KqcuBFYreJ4AC6mHSvQOsGTVOx3CYu3iLJk2py17TMLiSb4-yo68bo_fP7j/exec"
+            method="post">
+            <input type="text" id="validate" name="validate">
         </form>
     </main>
     <div id="load" class="load">
@@ -22,4 +29,5 @@
     </div>
 </body>
 <script src="main.js"></script>
+
 </html>
