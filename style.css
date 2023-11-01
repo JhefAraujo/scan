@@ -1,145 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
-    --s: 100px;
-    /* control the size */
-    --c1: #EDDBC7;
-    --c2: #A7727D;
+  --s: 100px;
+  /* control the size */
+  --c1: #eddbc7;
+  --c2: #a7727d;
 
-    --_g:
-        var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%, var(--c1) 36% 44%,
-        var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%, var(--c1) 76% 84%, var(--c2) 86% 94%;
-    background:
-        radial-gradient(100% 100% at 100% 0, var(--c1) 4%, var(--_g), #0008 96%, #0000),
-        radial-gradient(100% 100% at 0 100%, #0000, #0008 4%, var(--_g), var(--c1) 96%) var(--c1);
-    background-size: var(--s) var(--s);
+  --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
+    var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
+    var(--c1) 76% 84%, var(--c2) 86% 94%;
+  background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #0000,
+        #0008 4%,
+        var(--_g),
+        var(--c1) 96%
+      )
+      var(--c1);
+  background-size: var(--s) var(--s);
 }
 
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 form {
-    display: flex;
-    color: white;
-    flex-direction: column;
-    row-gap: 2.7vh;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width: 80vw;
-    background: #ffffffde;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  color: white;
+  flex-direction: column;
+  row-gap: 2.7vh;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 80vw;
+  background: #ffffffde;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 label {
-    background-color: #ffffff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    color: black;
-    border-radius: 16px;
-    padding: 15px;
-    transition-duration: 0.2s;
+  background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: black;
+  border-radius: 16px;
+  padding: 15px;
+  transition-duration: 0.2s;
 }
 
 label:active {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 h1 {
-    background-color: #ffffff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    color: black;
-    border-radius: 16px;
-    padding: 15px;
-    transition-duration: 0.2s;
+  background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: black;
+  border-radius: 16px;
+  padding: 15px;
+  transition-duration: 0.2s;
 }
 
 p {
-    padding: 5px;
-    background-color: white;
-    color: black;
-    border-radius: 6px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
+  padding: 5px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
 }
 
 .load {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    background-color: rgb(255, 255, 255);
-    backdrop-filter: blur(5px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    z-index: 1111111111;
-    animation: appear 0.5s;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 999991111111111;
+  animation: appear 0.5s;
 }
 
 @keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .loader {
-    position: relative;
-    width: 30vw;
-    height: 30vw;
+  position: relative;
+  width: 30vw;
+  height: 30vw;
 }
 
 .loader::before,
 .loader::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
 }
 
 /* Loader Blue Circle */
 .loader::before {
-    background: #A7727D;
-    animation: animate 2s ease-in-out infinite;
+  background: #a7727d;
+  animation: animate 2s ease-in-out infinite;
 }
 
 /* Loader Glassmorphism */
 .loader::after {
-    background: #a7727d2a;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    animation: animate 2s ease-in-out infinite;
-    z-index: 1;
-    animation-delay: -1s;
+  background: #a7727d2a;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: animate 2s ease-in-out infinite;
+  z-index: 1;
+  animation-delay: -1s;
 }
 
 @keyframes animate {
-    0%,
-    100% {
-      transform: translateX(-10vw);
-    }
-    50% {
-      transform: translateX(10vw);
-    }
+  0%,
+  100% {
+    transform: translateX(-10vw);
   }
+  50% {
+    transform: translateX(10vw);
+  }
+}
+
+#popup {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.753);
+  transition: 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+#pop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+  width: 80vw;
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+  z-index: 99999999999;
+}
+
+.close {
+  width: 60vw;
+  background-color: black;
+  border-radius: 5px;
+  height: 35px;
+  color: white;
+  z-index: 999999999999999999999999999999999;
+}
