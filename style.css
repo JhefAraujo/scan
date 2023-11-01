@@ -13,25 +13,7 @@ html {
   --c1: #eddbc7;
   --c2: #a7727d;
 
-  --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
-    var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
-    var(--c1) 76% 84%, var(--c2) 86% 94%;
-  background: radial-gradient(
-      100% 100% at 100% 0,
-      var(--c1) 4%,
-      var(--_g),
-      #0008 96%,
-      #0000
-    ),
-    radial-gradient(
-        100% 100% at 0 100%,
-        #0000,
-        #0008 4%,
-        var(--_g),
-        var(--c1) 96%
-      )
-      var(--c1);
-  background-size: var(--s) var(--s);
+background-color: #a7727d;
 }
 
 main {
@@ -61,7 +43,7 @@ form {
 
 label {
   background-color: #ffffff;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-weight: bold;
   color: black;
   border-radius: 16px;
@@ -70,12 +52,13 @@ label {
 }
 
 label:active {
-  transform: scale(1.1);
+  transform: translateY(5px);
+  box-shadow: none;
 }
 
 h1 {
   background-color: #ffffff;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-weight: bold;
   color: black;
   border-radius: 16px;
@@ -83,20 +66,29 @@ h1 {
   transition-duration: 0.2s;
 }
 
+h1:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
 #form p {
   padding: 5px;
   background-color: white;
   color: black;
   border-radius: 6px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-weight: bold;
+}
+
+a {
+  text-decoration: none;
 }
 
 .load {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background-color: rgb(255, 255, 255);
+  background-color: #a7727d;
   backdrop-filter: blur(5px);
   display: none;
   align-items: center;
@@ -132,7 +124,7 @@ h1 {
 
 /* Loader Blue Circle */
 .loader::before {
-  background: #a7727d;
+  background: #ffffff;
   animation: animate 2s ease-in-out infinite;
 }
 
@@ -167,7 +159,7 @@ h1 {
   height: 100vh;
   width: 100vw;
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.753);
+  background-color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
   pointer-events: none;
 }
@@ -176,7 +168,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  row-gap: 4vh;
   height: 50vh;
   width: 80vw;
   background-color: rgb(255, 255, 255);
@@ -185,7 +178,7 @@ h1 {
 }
 
 .close {
-  width: 60vw;
+  width: 150px;
   background-color: black;
   display: flex;
   align-items: center;
@@ -200,4 +193,5 @@ h1 {
 #os {
   text-align: center;
   width: 91%;
+  font-weight: bold;
 }
