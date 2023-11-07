@@ -64,7 +64,7 @@ async function send() {
     redirect: "follow",
   };
 
-  fetch(
+  await fetch(
     "https://script.google.com/macros/s/AKfycbwFc3pdSHHsDys8MeCW4O3AT7vqCgJJBidGiE6hYtL4ie1hdge23IS1YNG0JXjbYYRB/exec",
     requestOptions
   )
@@ -72,8 +72,18 @@ async function send() {
     .then((result) => (document.getElementById("os").innerHTML = result))
     .catch((error) => console.log("error", error));
 
-  if (document.getElementById("os").innerHTML != "") {
+  if (document.getElementById("os").innerHTML != '""') {
     document.getElementById("popup").style.opacity = "1";
     document.getElementById("popup").style.pointerEvents = "auto";
   }
+  else {
+    document.getElementById('consertos').style.display = 'none';
+    document.getElementById('os').innerHTML = 'Enviado com sucesso!';
+    document.getElementById("popup").style.opacity = "1";
+    document.getElementById("popup").style.pointerEvents = "auto";
+  }
+}
+
+async function form() {
+  document.getElementById("confirm").style.display = "flex";
 }
