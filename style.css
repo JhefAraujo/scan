@@ -59,7 +59,7 @@ form > label {
   transition-duration: 0.2s;
 }
 
-label:active {
+form > label:active {
   transform: translateY(5px);
   box-shadow: none;
 }

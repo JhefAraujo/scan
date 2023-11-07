@@ -75,10 +75,9 @@ async function send() {
   if (document.getElementById("os").innerHTML != '""') {
     document.getElementById("popup").style.opacity = "1";
     document.getElementById("popup").style.pointerEvents = "auto";
-  }
-  else {
-    document.getElementById('consertos').style.display = 'none';
-    document.getElementById('os').innerHTML = 'Enviado com sucesso!';
+  } else {
+    document.getElementById("consertos").style.display = "none";
+    document.getElementById("os").innerHTML = "Enviado com sucesso!";
     document.getElementById("popup").style.opacity = "1";
     document.getElementById("popup").style.pointerEvents = "auto";
   }
@@ -86,4 +85,16 @@ async function send() {
 
 async function form() {
   document.getElementById("confirm").style.display = "flex";
+}
+
+async function finish(order) {
+  const inputString = document.getElementById('os').innerHTML;
+  var numbers = inputString.replace(/\D/g, "");
+
+  if (numbers == order) {
+    console.log('deu bom')
+  }
+  else {
+    console.log('deu ruim')
+  }
 }
