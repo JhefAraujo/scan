@@ -65,7 +65,7 @@ async function send() {
   };
 
   await fetch(
-    "https://script.google.com/macros/s/AKfycbwFc3pdSHHsDys8MeCW4O3AT7vqCgJJBidGiE6hYtL4ie1hdge23IS1YNG0JXjbYYRB/exec",
+    "https://script.google.com/macros/s/AKfycbwqDncX01avy_YRg0G4rTHsoLSwlP6H4j8dmYlbvK78iQPYaqsXCiMMMVcVa2_O2jjF/exec",
     requestOptions
   )
     .then((response) => response.text())
@@ -88,16 +88,30 @@ async function form() {
 }
 
 async function finish(order) {
-  const inputString = document.getElementById('os').innerHTML;
+  const inputString = document.getElementById("os").innerHTML;
   var numbers = inputString.replace(/\D/g, "");
 
   if (numbers == order) {
-    document.getElementById('confirmation').style.display = 'flex';
+
+    var formdata = new FormData();
+    formdata.append("validate", valor);
+    
+    var requestOptions = {
+      method: "POST",
+      body: formdata,
+      redirect: "follow",
+    };
+
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbwbutKWoVHD1ZQpYSRDGkEGzIEMz5o3EPHmIknnigfHmMBZhLFbj6i2zrPfsImErAa_/exec",
+      requestOptions
+    );
+    
+    document.getElementById("confirmation").style.display = "flex";
     setTimeout(() => {
       window.location.reload();
     }, 3000);
-  }
-  else {
-    window.alert('incorreto');
+  } else {
+    window.alert("incorreto");
   }
 }

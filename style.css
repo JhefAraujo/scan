@@ -13,6 +13,7 @@ html {
   --c1: #eddbc7;
   --c2: #a7727d;
   overflow: hidden;
+  overflow-x: hidden;
 
 background-color: #a7727d;
 }
