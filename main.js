@@ -92,9 +92,12 @@ async function finish(order) {
   var numbers = inputString.replace(/\D/g, "");
 
   if (numbers == order) {
-    console.log('deu bom')
+    document.getElementById('confirmation').style.display = 'flex';
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   }
   else {
-    console.log('deu ruim')
+    window.alert('incorreto');
   }
 }
