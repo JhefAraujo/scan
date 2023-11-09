@@ -112,6 +112,11 @@ async function finish(order) {
       window.location.reload();
     }, 3000);
   } else {
-    window.alert("incorreto");
+    document.getElementById('label').innerHTML = 'OS incorreta!';
+    document.getElementById('label').style.color = 'red';
+    setTimeout(() => {
+      document.getElementById('label').style.color = 'black';
+      document.getElementById('label').innerHTML = 'Ordem de Serviço';
+    }, 2500);
   }
 }
